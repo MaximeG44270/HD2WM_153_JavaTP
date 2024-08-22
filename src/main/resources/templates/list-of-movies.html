@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEVFLIX-MOVIE-LIST</title>
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Water+Brush&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/movie-list.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="vendor/uikit/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="vendor/uikit/js/uikit.min.js"></script>
+    <script src="vendor/uikit/js/uikit-icons.min.js"></script>
+</head>
+<body>
+    <div class="barre-haute">
+        <div class="nom-devflix">
+            <p class="nom-devflix-1">Welcome to</p>
+            <p class="nom-devflix-2">DEVFLIX</p>
+        </div>
+        <img src="image/loupe-picture.png" class="icone-loupe" alt="logo-loupe">
+        <img src="image/cloche-picture.png" class="icone-cloche" alt="logo-cloche">
+    </div>
+    <div class="container">
+        <h1 class="h1-text">The Movies</h1>
+        <div class="movie">
+            <div th:each="movie : ${movies}">
+                <div class="création-de-carte">
+                    <div class="image-carte">
+                        <img class="image-border-radius image-with-shadow" th:src="${movie.urlImage}" alt="">
+                    </div>
+                    <div class="body-text-carte">
+                        <h3 class="h3-carte" th:text="${movie.title}"></h3>
+                        <div>
+                            <span th:text="${'Année : ' + movie.year}"></span>
+                            -
+                            <span th:text="${'Durée : ' + movie.duration}"></span>
+                        </div>
+                        <div>
+                            <i th:each="star: ${maxStars}" class="fa fa-star" th:classappend="${movie.getNote() >= star} ? 'eni-star-check' : ''"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="picture-home">
+            <div class="picture-home-fond">
+                <a href="Home">
+                    <img class="footer-picture-home" src="image/picture-home.png" alt="home">
+                </a>
+                <p class="footer-text-home">Home</p>
+            </div>
+        </div>
+        <div class="picture-discover">
+            <div class="picture-discover-fond">
+                <img class="footer-picture-discover" src="image/picture-discover.png" alt="discover">
+                <p class="footer-text-discover">Discover</p>
+            </div>
+        </div>
+        <div class="picture-saved">
+            <div class="picture-saved-fond">
+                <img class="footer-picture-saved" src="image/picture-saved.png" alt="saved">
+                <p class="footer-text-saved">Saved</p>
+            </div>
+        </div>
+        <div class="picture-profile">
+            <div class="picture-profile-fond">
+                <img class="footer-picture-profile" src="image/picture-profile.png" alt="profile">
+                <p class="footer-text-profile">Profile</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

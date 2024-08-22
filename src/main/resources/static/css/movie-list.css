@@ -1,0 +1,250 @@
+body,
+html {
+    background-color: #141414;
+    margin: 0;
+}
+
+/*-------------------- BARRE HAUTE---------------------*/
+.barre-haute {
+    display: flex;
+    align-items: center;
+}
+
+.nom-devflix {
+    display: flex;
+    flex-direction: column;
+}
+
+.nom-devflix-1 {
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 0.8rem;
+    margin-left: 6vw;
+    margin-bottom: 0;
+    margin-top: 2vh;
+}
+
+.nom-devflix-2 {
+    font-family: 'poppins', sans-serif;
+    color: #f31434;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-left: 6vw;
+    margin-top: 0;
+}
+
+.icone-loupe {
+    height: 3vh;
+    width: 6vw;
+    margin-top: -1vh;
+    margin-left: 52.5vw;
+}
+
+.icone-cloche {
+    height: 3vh;
+    width: 5vw;
+    margin-left: 5vw;
+    margin-top: -1vh;
+}
+
+/*-------------------- CONTAINER ---------------------*/
+
+.h1-text {
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-left: 6vw;
+    margin-top: 2vh;
+    align-content: center;
+}
+
+.movie {
+    padding-left: 31px;
+    padding-right: 33px;
+}
+
+.eni-star-check {
+    color: yellow;
+}
+
+.body-text-carte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20vh;
+    margin-bottom: 18vh;
+}
+
+.image-border-radius {
+    border-radius: 7%;
+}
+
+.image-with-shadow {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.création-de-carte {
+    position: relative;
+    width: 100%;
+    margin-bottom: 6vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image-carte {
+    position: relative;
+}
+
+.image-carte img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.image-carte::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    border-radius: 0 0 10px 10px;
+}
+
+.body-text-carte {
+    position: absolute;
+    bottom: -135px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.h3-carte {
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-left: 6vw;
+    margin-top: 2vh;
+    margin-bottom: 0;
+}
+
+/*-------------------- FOOTER ---------------------*/
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 3vh;
+    background-color: black;
+}
+
+.footer-picture-home {
+    height: 5vh;
+    width: 8vw;
+}
+
+.footer-picture-discover {
+    height: 5vh;
+    width: 9vw;
+}
+
+.footer-picture-saved {
+    height: 4vh;
+    width: 6vw;
+    margin-top: 1vh;
+}
+
+.footer-picture-profile {
+    height: 4vh;
+    width: 6vw;
+    margin-top: 0.5vh;
+}
+
+.picture-home-fond {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.picture-discover-fond {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.picture-saved-fond {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.picture-profile-fond {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.picture-home {
+    margin-right: 14vw;
+    margin-top: 1.5vh;
+}
+
+.picture-discover {
+    margin-right: 14vw;
+    margin-top: 1.5vh;
+}
+
+.picture-saved {
+    margin-right: 14vw;
+    margin-top: 0.5vh;
+}
+
+.picture-profile {
+    margin-top: 1.5vh;
+}
+
+.footer-text-home {
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 0.8rem;
+    margin-top: 0;
+}
+
+.footer-text-discover {
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 0.8rem;
+    margin-top: 0;
+}
+
+.footer-text-saved {
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 0.8rem;
+    margin-top: 1vh;
+}
+
+.footer-text-profile {
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 0.8rem;
+    margin-top: 0.5vh;
+}
