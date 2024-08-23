@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Water+Brush&display=swap" rel="stylesheet">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="vendor/uikit/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="vendor/uikit/js/uikit.min.js"></script>
+    <script src="vendor/uikit/js/uikit-icons.min.js"></script>
+    <!------------------------------------------------------------- DEBUT DE HEADER ------------------------------------------------------------->
+    <div layout:fragment="css-title"></div>
+    <!------------------------------------------------------------- FIN DE HEADER ------------------------------------------------------------->
+</head>
+<body>
+<!------------------------------------------------------------- DEBUT DE HEADER ------------------------------------------------------------->
+    <div class="barre-haute">
+        <div class="nom-devflix">
+            <p class="nom-devflix-1">Welcome to</p>
+            <p class="nom-devflix-2">DEVFLIX</p>
+        </div>
+        <img src="image/loupe-picture.png" class="icone-loupe" alt="logo-loupe">
+        <img src="image/cloche-picture.png" class="icone-cloche" alt="logo-cloche">
+    </div>
+<!------------------------------------------------------------- FIN DE HEADER ------------------------------------------------------------->
+    <div layout:fragment="content">
+    </div>
+<!------------------------------------------------------------- DEBUT DE FOOTER ------------------------------------------------------------->
+    <footer>
+        <div class="footer">
+            <div class="picture-home">
+                <div class="picture-home-fond">
+                    <a href="Home">
+                        <img class="footer-picture-home" src="image/picture-home.png" alt="home">
+                    </a>
+                    <p class="footer-text-home">Home</p>
+                </div>
+            </div>
+            <div class="picture-discover">
+                <div class="picture-discover-fond">
+                    <a href="Home">
+                        <img class="footer-picture-discover" src="image/picture-discover.png" alt="discover">
+                    </a>
+                    <p class="footer-text-discover">Discover</p>
+                </div>
+            </div>
+            <div class="picture-saved">
+                <div class="picture-saved-fond">
+                    <a href="Home">
+                        <img class="footer-picture-saved" src="image/picture-saved.png" alt="saved">
+                    </a>
+                    <p class="footer-text-saved">Saved</p>
+                </div>
+            </div>
+            <div class="picture-profile">
+                <div class="picture-profile-fond">
+                    <a href="Register">
+                        <img class="footer-picture-profile" src="image/picture-profile.png" alt="profile">
+                    </a>
+                    <p class="footer-text-profile">Profile</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!------------------------------------------------------------- FIN DE FOOTER ------------------------------------------------------------->
+</body>
+</html>

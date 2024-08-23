@@ -1,107 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEVFLIX</title>
-    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Water+Brush&display=swap" rel="stylesheet">
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="vendor/uikit/css/uikit.min.css" />
-    <!-- UIkit JS -->
-    <script src="vendor/uikit/js/uikit.min.js"></script>
-    <script src="vendor/uikit/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/base}">
 <body>
-<div class="barre-haute">
-    <div class="nom-devflix">
-        <p class="nom-devflix-1">Welcome to</p>
-        <p class="nom-devflix-2">DEVFLIX</p>
-    </div>
-    <img src="image/loupe-picture.png" class="icone-loupe" alt="logo-loupe">
-    <img src="image/cloche-picture.png" class="icone-cloche" alt="logo-cloche">
+<div layout:fragment="css-title">
+    <link rel="stylesheet" href="css/style.css">
+    <title>DEVFLIX</title>
 </div>
-<div class="carousel">
-    <div class="image-2">
-        <div class="carousel-arrow-left"></div>
-        <div class="text-carousel">
-            <img src="image/jurassic-world-home.jpg" alt="carrousel" class="image-carrousel">
-            <h1>JURASSIC WORLD</h1>
-            <p class="text-carousel-img2">Ne loupez pas le nouveau <br>film jurassic world</p>
+<div layout:fragment="content">
+    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true autoplay-interval: 3000">
+    <div class="uk-slider-items uk-grid">
+        <div class="uk-width-3-4">
+            <div class="uk-panel dev-uk-panel">
+                <img src="image/jurassic-world-home.jpg" width="100%" height="50px" alt="">
+                <div class="uk-position-center uk-panel"><h1 class="h1-carousel">Don't miss the next Jurassic World</h1></div>
+            </div>
+        </div>
+        <div class="uk-width-3-4">
+            <div class="uk-panel dev-uk-panel">
+                <img src="image/Godzilla-picture.jpg" width="600" height="400" alt="">
+                <div class="uk-position-center uk-panel"><h1 class="h1-carousel">Don't miss the next GodZilla</h1></div>
+            </div>
+        </div>
+        <div class="uk-width-3-4">
+            <div class="uk-panel dev-uk-panel">
+                <img src="image/menace-fantome-picture.jpg" width="600" height="400" alt="">
+                <div class="uk-position-center uk-panel"><h1 class="h1-carousel">Don't miss the next Star Wars</h1></div>
+            </div>
         </div>
     </div>
-</div>
-<nav>
-    <a href="ListOfMovies" class="nav-item">ALL</a>
-    <a href="ListOfMovies" class="nav-item">Action</a>
-    <a href="ListOfMovies" class="nav-item">Fantastic</a>
-    <a href="ListOfMovies" class="nav-item">Dramas</a>
-    <a href="ListOfMovies" class="nav-item">Comedy</a>
-    <a href="ListOfMovies" class="nav-item">Horror</a>
-</nav>
-<div class="trending-movie-text">
-    <h2>Trending Movies</h2>
-    <p class="trending-movie-see-all">See All</p>
-</div>
-<div class="trending-movie-picture">
-    <div class="trending-movie-1">
-        <img class="mignon" src="image/moi-moche-et-mechant-4.jpeg" alt="mignon">
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slider-item="next"></a>
     </div>
-    <div class="trending-movie-2">
-        <img class="civil-war" src="image/civil-war-picture.jpeg" alt="civil-war">
+        <nav>
+        <a href="ListOfMovies" class="nav-item">ALL</a>
+        <a href="ListOfMovies" class="nav-item">Action</a>
+        <a href="ListOfMovies" class="nav-item">Fantastic</a>
+        <a href="ListOfMovies" class="nav-item">Dramas</a>
+        <a href="ListOfMovies" class="nav-item">Comedy</a>
+        <a href="ListOfMovies" class="nav-item">Horror</a>
+    </nav>
+    <div class="trending-movie-text">
+        <h2>Trending Movies</h2>
+        <p class="trending-movie-see-all">See All</p>
     </div>
-    <div class="trending-movie-3">
-        <img class="avenger" src="image/avenger-picture.jpg" alt="avenger">
-    </div>
-</div>
-<div class="recommendation-text">
-    <h2>Recommendation</h2>
-    <p class="recommendation-see-all">See All</p>
-</div>
-<div class="recommendation-movie-picture">
-    <div class="recommendation-movie-1">
-        <img class="hunger-games-picture" src="image/hunger-games-picture.jpg" alt="hunger-games">
-    </div>
-    <div class="recommendation-movie-2">
-        <img class="seigneur-des-anneaux" src="image/seigneur-des-anneaux.jpg" alt="seigneur-des-anneaux">
-    </div>
-    <div class="recommendation-movie-3">
-        <img class="the-meg-picture" src="image/the-meg-picture.jpg" alt="the-meg">
-    </div>
-</div>
-<div class="footer">
-    <div class="picture-home">
-        <div class="picture-home-fond">
-            <a href="Home">
-                <img class="footer-picture-home" src="image/picture-home.png" alt="home">
-            </a>
-            <p class="footer-text-home">Home</p>
+    <div class="trending-movie-picture">
+        <div class="trending-movie-1">
+            <img class="mignon" src="image/moi-moche-et-mechant-4.jpeg" alt="mignon">
+        </div>
+        <div class="trending-movie-2">
+            <img class="civil-war" src="image/civil-war-picture.jpeg" alt="civil-war">
+        </div>
+        <div class="trending-movie-3">
+            <img class="avenger" src="image/avenger-picture.jpg" alt="avenger">
         </div>
     </div>
-    <div class="picture-discover">
-        <div class="picture-discover-fond">
-            <img class="footer-picture-discover" src="image/picture-discover.png" alt="discover">
-            <p class="footer-text-discover">Discover</p>
-        </div>
+    <div class="recommendation-text">
+        <h2>Recommendation</h2>
+        <p class="recommendation-see-all">See All</p>
     </div>
-    <div class="picture-saved">
-        <div class="picture-saved-fond">
-            <img class="footer-picture-saved" src="image/picture-saved.png" alt="saved">
-            <p class="footer-text-saved">Saved</p>
+    <div class="recommendation-movie-picture">
+        <div class="recommendation-movie-1">
+            <img class="hunger-games-picture" src="image/hunger-games-picture.jpg" alt="hunger-games">
         </div>
-    </div>
-    <div class="picture-profile">
-        <div class="picture-profile-fond">
-            <img class="footer-picture-profile" src="image/picture-profile.png" alt="profile">
-            <p class="footer-text-profile">Profile</p>
+        <div class="recommendation-movie-2">
+            <img class="seigneur-des-anneaux" src="image/seigneur-des-anneaux.jpg" alt="seigneur-des-anneaux">
+        </div>
+        <div class="recommendation-movie-3">
+            <img class="the-meg-picture" src="image/the-meg-picture.jpg" alt="the-meg">
         </div>
     </div>
 </div>
 </body>
-
 </html>

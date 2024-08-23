@@ -43,5 +43,8 @@ public class MovieController {
         model.addAttribute("movie", movie);
         return "detail-page";
     }
-
+    @GetMapping("Register")
+    public String Register() {
+        return "register";
+    }
 }

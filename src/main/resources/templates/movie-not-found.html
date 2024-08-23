@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/base}">
 <body>
-<h1>Erreur</h1>
-<p>L'aliment que vous essayer d'afficher n'existe pas</p>
+<div layout:fragment="css-title">
+    <title>DEVFLIX-not-found</title>
+    <link rel="stylesheet" href="css/movie-list.css">
+</div>
+<div layout:fragment="content">
+    <h1>Erreur</h1>
+    <p>Le Film que vous essayer d'afficher n'existe pas</p>
+</div>
 </body>
 </html>

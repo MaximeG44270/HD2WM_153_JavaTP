@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/base}">
+<body>
+<div layout:fragment="css-title">
+  <title>Register</title>
+  <link rel="stylesheet" href="css/register.css">
+</div>
+<div layout:fragment="content">
+  <img src="image/logo-devflix.png" class="logo-devflix" alt="devflix">
+  <form id="inscrireForm">
+    <div class="name">
+      <div class="container-label">
+        <label for="nom">USER NAME</label>
+      </div>
+      <input type="text" placeholder="3 caractères minimum" id="nom" name="nom" class="input" required />
+    </div>
+    <div class="email">
+      <div class="container-label">
+        <label for="email">ENTER YOUR EMAIL</label>
+      </div>
+      <input type="text" placeholder="Votre email" id="email" name="email" class="input" required />
+    </div>
+    <div class="password">
+      <div class="container-label">
+        <label for="password">PASSWORD</label>
+      </div>
+      <input type="text" placeholder="Votre mot de passe" id="password" name="password" class="input" required />
+    </div>
+    <div class="confirm-password">
+      <div class="container-label"></div>
+      <label for="confirm-password">CONFIRM PASSWORD</label>
+    </div>
+    <input type="text" id="confirm-password" placeholder="Confirmer votre mot de passe" name="confirmPassword"
+         class="input" required />
+    <div class="button">
+      <button type="submit" id="creaCompte">Account creation</button>
+      <button type="reset" id="annuler">Cancel</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>
