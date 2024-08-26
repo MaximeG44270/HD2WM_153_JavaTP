@@ -21,8 +21,9 @@ html {
     font-weight: 500;
     font-style: italic;
     font-size: 0.8rem;
-    margin-left: 8vw;
+    margin-left: 6vw;
     margin-bottom: 0;
+    margin-top: 2vh;
 }
 
 .nom-devflix-2 {
@@ -31,118 +32,160 @@ html {
     font-weight: 500;
     font-style: italic;
     font-size: 1.2rem;
-    margin-left: 8vw;
+    margin-left: 6vw;
     margin-top: 0;
 }
 
 .icone-loupe {
     height: 3vh;
-    width: 7vw;
+    width: 6vw;
     margin-top: -1vh;
-    margin-left: 46.5vw;
+    margin-left: 52.5vw;
 }
 
 .icone-cloche {
     height: 3vh;
-    width: 6vw;
+    width: 5vw;
     margin-left: 5vw;
     margin-top: -1vh;
 }
 
-.logo-devflix {
-    width: 21vw;
-    margin-left: 42vw;
-    margin-top: 6vh;
+/*-------------------- CAROUSEL ---------------------*/
+.dev-uk-panel {
+    width: 80vw;
+    margin-left: 10vw;
 }
 
-/*-------------------- MAIN ---------------------*/
-#inscrireForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 6vh;
+.h1-carousel {
+    text-align: start;
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: -11vh;
+    margin-left: -12vh;
 }
-
-.input {
-    width: 70%;
-    height: 3vh;
+/*-------------------- SELECTION CATEGORIE ---------------------*/
+nav {
     margin-top: 2vh;
-    border: solid;
-    border-color: #f31434;
+    margin-left: 8vw;
+    margin-bottom: 3vh;
 }
 
-label {
+.nav-item {
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-left: 3vw;
+    text-decoration: none;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+    color: #f31434;
+    text-decoration: none;
+}
+
+/*-------------------- TRENDING MOVIES ---------------------*/
+.trending-movie-text {
+    display: flex;
+}
+
+h2 {
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1rem;
+    margin-left: 8vw;
+    margin-top: 1.5vh;
+    align-content: center;
+}
+
+.trending-movie-see-all {
     font-family: 'poppins', sans-serif;
     color: #f31434;
     font-weight: 500;
     font-style: italic;
-    font-size: 1.2rem;
-    margin-top: 2vh;
+    font-size: 1rem;
+    margin-top: 1.45vh;
+    margin-left: 38.5vw;
 }
 
-.name {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.email {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2vh;
-}
-
-.password {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2vh;
-}
-
-.confirm-password {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2vh;
-}
-
-.button {
-    margin-top: 5vh;
+.trending-movie-picture {
     display: flex;
     flex-direction: row;
-    margin-left: 4vw;
+    justify-content: center;
 }
 
-#creaCompte {
-    margin-right: 5vw;
+.mignon {
+    width: 25vw;
+    border-radius: 15%;
+}
+
+.civil-war {
+    width: 25.3vw;
+    border-radius: 15%;
+}
+
+.avenger {
+    width: 23.8vw;
+    border-radius: 15%;
+}
+
+.trending-movie-1 {
+    margin-right: 4.5vw;
+}
+
+.trending-movie-2 {
+    margin-right: 4.5vw;
+}
+
+.recommendation-text {
+    display: flex;
+    flex-direction: row;
+}
+
+.recommendation-see-all {
     font-family: 'poppins', sans-serif;
-    font-weight: 400;
-    background-color: #fff;
-    color: #333;
-    border-radius: 15px;
+    color: #f31434;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 1.45vh;
+    margin-left: 38.5vw;
 }
 
-#annuler {
-    margin-right: 5vw;
-    font-family: 'poppins', sans-serif;
-    font-weight: 400;
-    background-color: #f31434;
-    color: #333;
-    border-radius: 15px;
+/*-------------------- RECOMMENDATION ---------------------*/
+
+.recommendation-movie-picture {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-input:invalid {
-    border: 1px solid #f31434;
+.hunger-games-picture {
+    width: 26vw;
+    margin-right: 3vw;
+    border-radius: 15%;
 }
 
-input:valid {
-    border: 2px dashed rgb(251, 255, 0);
+.seigneur-des-anneaux {
+    width: 30vw;
+    margin-right: 3vw;
+    border-radius: 15%;
+}
+
+.the-meg-picture {
+    width: 25vw;
+    border-radius: 15%;
+}
+
+.rectangle {
+    width: 100%;
+    height: 14vh;
 }
 
 /*-------------------- FOOTER ---------------------*/

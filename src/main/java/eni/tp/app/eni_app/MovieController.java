@@ -7,10 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.util.Arrays;
 import java.util.List;
 
+@SessionAttributes({"loggedUser"})
 @Controller
 public class MovieController {
     @Autowired
@@ -34,17 +36,17 @@ public class MovieController {
 
         return "list-of-movies";
     }
-    @GetMapping("Detail-Page/{id}")
+    @GetMapping("movie-detail/{id}")
     public String detailPage(@PathVariable("id")long id, Model model) {
         Movie movie = movieManager.getById(id);
         if(movie == null){
             return "movie-not-found";
         }
         model.addAttribute("movie", movie);
-        return "detail-page";
+        return "movie-detail";
     }
     @GetMapping("Register")
     public String Register() {
-        return "register";
+        return "auth/register";
     }
 }

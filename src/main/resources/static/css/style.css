@@ -170,6 +170,7 @@ h2 {
     width: 26vw;
     margin-right: 3vw;
     border-radius: 15%;
+    margin-bottom: 1vh;
 }
 
 .seigneur-des-anneaux {
@@ -184,6 +185,12 @@ h2 {
 }
 
 /*-------------------- FOOTER ---------------------*/
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 .footer {
     display: flex;
     flex-direction: row;

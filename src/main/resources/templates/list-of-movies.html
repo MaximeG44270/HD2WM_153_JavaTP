@@ -11,25 +11,28 @@
         <h1 class="h1-text">The Movies</h1>
         <div class="movie">
             <div th:each="movie : ${movies}">
-                <div class="création-de-carte">
-                    <div class="image-carte">
-                        <img class="image-border-radius image-with-shadow" th:src="${movie.urlImage}" alt="">
-                    </div>
-                    <div class="body-text-carte">
-                        <h3 class="h3-carte" th:text="${movie.title}"></h3>
-                        <div>
-                            <span th:text="${'Année : ' + movie.year}"></span>
+                <a th:href="@{'/movie-detail/' + ${movie.getId()}}">
+                    <div class="création-de-carte">
+                        <div class="image-carte">
+                            <img class="image-border-radius image-with-shadow" th:src="${movie.urlImage}" alt="">
+                        </div>
+                        <div class="body-text-carte">
+                            <h3 class="h3-carte" th:text="${movie.title}"></h3>
+                            <div>
+                                <span th:text="${'Année : ' + movie.year}"></span>
                             -
-                            <span th:text="${'Durée : ' + movie.duration}"></span>
-                        </div>
-                        <div>
-                            <i th:each="star: ${maxStars}" class="fa fa-star" th:classappend="${movie.getNote() >= star} ? 'eni-star-check' : ''"></i>
+                                <span th:text="${'Durée : ' + movie.duration}"></span>
+                            </div>
+                            <div>
+                                <i th:each="star: ${maxStars}" class="fa fa-star" th:classappend="${movie.getNote() >= star} ? 'eni-star-check' : ''"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
+    <div class="rectangle"></div>
 </div>
 </body>
 </html>

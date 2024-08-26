@@ -25,9 +25,22 @@
             <p class="nom-devflix-1">Welcome to</p>
             <p class="nom-devflix-2">DEVFLIX</p>
         </div>
+        <a href="logout">
+            <img th:if="${loggedUser != null}" src="image/cloche-picture.png" class="icone-cloche" alt="deconnection">
+        </a>
         <img src="image/loupe-picture.png" class="icone-loupe" alt="logo-loupe">
         <img src="image/cloche-picture.png" class="icone-cloche" alt="logo-cloche">
+       </div>
+
+    <!-- Flash message conditionnel -->
+    <!-- Affiche un message temporaire si il existe -->
+    <div th:if="${flashMessage}" class="uk-padding-small">
+        <div class="uk-alert-primary" uk-alert>
+            <a href class="uk-alert-close" uk-close></a>
+            <p th:text="${flashMessage}"></p>
+        </div>
     </div>
+
 <!------------------------------------------------------------- FIN DE HEADER ------------------------------------------------------------->
     <div layout:fragment="content">
     </div>
@@ -60,7 +73,7 @@
             </div>
             <div class="picture-profile">
                 <div class="picture-profile-fond">
-                    <a href="Register">
+                    <a href="login">
                         <img class="footer-picture-profile" src="image/picture-profile.png" alt="profile">
                     </a>
                     <p class="footer-text-profile">Profile</p>

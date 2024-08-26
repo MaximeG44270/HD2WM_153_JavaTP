@@ -5,7 +5,7 @@ public class Movie {
     public long id;
     public String title;
     //temporaire => Plus tard les notes
-    public int note = 2;
+    public int note = 4;
     public int year;
     public int duration;
     public String synopsis;
