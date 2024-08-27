@@ -40,12 +40,24 @@ html {
     height: 3vh;
     width: 6vw;
     margin-top: -1vh;
-    margin-left: 52.5vw;
+    margin-left: 41.5vw;
 }
 
 .icone-cloche {
     height: 3vh;
     width: 5vw;
+    margin-left: 5vw;
+    margin-top: -1vh;
+}
+
+.icone-login {
+    width: 6vw;
+    margin-left: 5vw;
+    margin-top: -1vh;
+}
+
+.icone-logout {
+    width: 6vw;
     margin-left: 5vw;
     margin-top: -1vh;
 }
@@ -99,7 +111,7 @@ h2 {
     font-weight: 500;
     font-style: italic;
     font-size: 1rem;
-    margin-left: 8vw;
+    margin-left: 6vw;
     margin-top: 1.5vh;
     align-content: center;
 }
@@ -111,7 +123,7 @@ h2 {
     font-style: italic;
     font-size: 1rem;
     margin-top: 1.45vh;
-    margin-left: 38.5vw;
+    margin-left: 47vw;
 }
 
 .trending-movie-picture {
@@ -155,7 +167,7 @@ h2 {
     font-style: italic;
     font-size: 1rem;
     margin-top: 1.45vh;
-    margin-left: 38.5vw;
+    margin-left: 46vw;
 }
 
 /*-------------------- RECOMMENDATION ---------------------*/
@@ -182,6 +194,11 @@ h2 {
 .the-meg-picture {
     width: 25vw;
     border-radius: 15%;
+}
+
+.rectangle {
+    width: 100%;
+    margin-top: 13vh;
 }
 
 /*-------------------- FOOTER ---------------------*/

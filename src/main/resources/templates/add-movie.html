@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/base}">
+<body>
+<div layout:fragment="css-title">
+  <link rel="stylesheet" href="css/add-movie.css">
+  <title>Add Movie</title>
+</div>
+<div layout:fragment="content">
+  <div class="main">
+    <img src="image/logo-devflix.png" class="logo-devflix" alt="devflix">
+    <form th:object="${movie}" method="post" action="/add-movie" id="movieForm">
+      <h2 class="ajouter-movie">Add Your Movie</h2>
+      <div class="container-title">
+        <div class="container-label">
+          <label for="title">Title</label>
+        </div>
+          <input th:field="*{title}" type="text" placeholder="Name of your movie" id="title" name="title" class="input"/>
+        <ul th:if="${#fields.hasErrors('title')}">
+          <li th:each="error: ${#fields.errors('title')}" th:text="${error}"></li>
+        </ul>
+      </div>
+<!------------------------------------------------------------------------------------------------------------------------------------->
+      <div class="container-year">
+        <div class="container-label">
+          <label for="year">year</label>
+        </div>
+        <input th:field="*{year}" type="number" placeholder="Add the year" id="year" name="year" class="input"/>
+        <ul th:if="${#fields.hasErrors('year')}">
+          <li th:each="error: ${#fields.errors('year')}" th:text="${error}"></li>
+        </ul>
+      </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------->
+      <div class="container-duration">
+        <div class="container-label">
+          <label for="duration">Duration(min)</label>
+        </div>
+        <input th:field="*{duration}" type="number" placeholder="Add time of the movie" id="duration" name="duration" class="input"/>
+        <ul th:if="${#fields.hasErrors('duration')}">
+          <li th:each="error: ${#fields.errors('duration')}" th:text="${error}"></li>
+        </ul>
+      </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------->
+      <div class="container-synopsis">
+        <div class="container-label">
+          <label for="synopsis">Synopsis</label>
+        </div>
+        <input th:field="*{synopsis}" type="text" placeholder="Synopsis" id="synopsis" name="synopsis" class="input"/>
+        <ul th:if="${#fields.hasErrors('synopsis')}">
+          <li th:each="error: ${#fields.errors('synopsis')}" th:text="${error}"></li>
+        </ul>
+      </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------->
+      <div class="button">
+        <button type="submit" value="Envoyer" id="envoyer">Send</button>
+      </div>
+    </form>
+  </div>
+  <div class="rectangle"></div>
+</div>
+</body>
+</html>

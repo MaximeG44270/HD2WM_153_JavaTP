@@ -1,15 +1,28 @@
 package eni.tp.app.eni_app.bo;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+
 public class Movie {
 
     public long id;
+
+    @NotBlank(message = "merci de rensigner un titre !!!")
     public String title;
+
     //temporaire => Plus tard les notes
     public int note = 4;
+
+    @Min(value = 1985)
     public int year;
     public int duration;
     public String synopsis;
     public String urlImage;
+
+    public Movie() {
+
+    }
 
     public long getId() {
         return id;

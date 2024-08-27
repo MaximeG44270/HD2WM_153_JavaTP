@@ -25,19 +25,24 @@
             <p class="nom-devflix-1">Welcome to</p>
             <p class="nom-devflix-2">DEVFLIX</p>
         </div>
-        <a href="logout">
-            <img th:if="${loggedUser != null}" src="image/cloche-picture.png" class="icone-cloche" alt="deconnection">
-        </a>
         <img src="image/loupe-picture.png" class="icone-loupe" alt="logo-loupe">
         <img src="image/cloche-picture.png" class="icone-cloche" alt="logo-cloche">
+        <div class="bouton-login-logout">
+            <a href="/login">
+                <img th:if="${loggedUser == null}" src="image/login.png" class="icone-login" alt="connection">
+            </a>
+            <a href="/logout">
+                <img th:if="${loggedUser != null}" src="image/logout.png" class="icone-logout" alt="déconnection">
+            </a>
+        </div>
        </div>
 
     <!-- Flash message conditionnel -->
     <!-- Affiche un message temporaire si il existe -->
     <div th:if="${flashMessage}" class="uk-padding-small">
-        <div class="uk-alert-primary" uk-alert>
+        <div th:classappend="${flashMessage.getTypeCssClass}" class="uk-alert-primary" uk-alert>
             <a href class="uk-alert-close" uk-close></a>
-            <p th:text="${flashMessage}"></p>
+            <p th:text="${flashMessage.message}"></p>
         </div>
     </div>
 

@@ -8,22 +8,28 @@
 </div>
 <div layout:fragment="content">
     <img src="image/logo-devflix.png" class="logo-devflix" alt="devflix">
-    <form id="inscrireForm">
-        <h2 class="h2-connecter">Se Connecter</h2>
+    <form th:object="${user}" method="post" action="/login" id="inscrireForm">
+        <h2 class="h2-connecter">Login</h2>
         <div class="name">
             <div class="container-label">
                 <label for="nom">USER NAME</label>
             </div>
-            <input type="text" placeholder="3 caractères minimum" id="nom" name="nom" class="input" required />
+            <input th:field="*{email}" type="text" placeholder="Email valid" id="email" name="email" class="input" required />
+            <ul th:if="${#fields.hasErrors('email')}">
+                <li th:each="error: ${#fields.errors('email')}" th:text="${error}"></li>
+            </ul>
         </div>
         <div class="password">
             <div class="container-label">
                 <label for="password">PASSWORD</label>
             </div>
-            <input type="text" placeholder="Votre mot de passe" id="password" name="password" class="input" required />
+            <input th:field="*{password}" type="text" placeholder="Your password" id="password" name="password" class="input" required />
+            <ul th:if="${#fields.hasErrors('password')}">
+                <li th:each="error: ${#fields.errors('passeword')}" th:text="${error}"></li>
+            </ul>
         </div>
         <div class="button">
-            <button type="submit" id="se-connecter">Connecter</button>
+            <button type="submit" value="Se Connecter" id="se-connecter">Login</button>
         </div>
     </form>
 </div>

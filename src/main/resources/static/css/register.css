@@ -37,25 +37,37 @@ html {
 
 .icone-loupe {
     height: 3vh;
-    width: 7vw;
+    width: 6vw;
     margin-top: -1vh;
-    margin-left: 46.5vw;
+    margin-left: 41.5vw;
 }
 
 .icone-cloche {
     height: 3vh;
+    width: 5vw;
+    margin-left: 5vw;
+    margin-top: -1vh;
+}
+
+.icone-login {
     width: 6vw;
     margin-left: 5vw;
     margin-top: -1vh;
 }
 
+.icone-logout {
+    width: 6vw;
+    margin-left: 5vw;
+    margin-top: -1vh;
+}
+
+/*-------------------- MAIN ---------------------*/
 .logo-devflix {
     width: 21vw;
     margin-left: 42vw;
     margin-top: 6vh;
 }
 
-/*-------------------- MAIN ---------------------*/
 #inscrireForm {
     display: flex;
     flex-direction: column;

@@ -2,12 +2,12 @@ package eni.tp.app.eni_app;
 
 import eni.tp.app.eni_app.bll.MovieManager;
 import eni.tp.app.eni_app.bo.Movie;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,8 +51,26 @@ public class MovieController {
         model.addAttribute("movie", movie);
         return "movie-detail";
     }
-    @GetMapping("Register")
-    public String Register() {
-        return "auth/register";
+
+    @GetMapping("add-movie")
+    public String addMovie(Model model) {
+        // Instancier un film par défaut
+        Movie movie = new Movie();
+
+        // Envoyer le film dans le model
+        model.addAttribute("movie", movie);
+
+        // Afficher le formulaire
+        return "add-movie";
+    }
+
+    @PostMapping("add-movie")
+    public String postAddMovie(@Valid @ModelAttribute Movie movie, BindingResult bindingResult) {
+        /*
+        if (bindingResult.hasErrors()) {
+        }*/
+
+        return "add-movie";
     }
 }
+

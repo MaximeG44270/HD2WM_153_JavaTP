@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/base}">
+<body>
+<div layout:fragment="css-title">
+    <link rel="stylesheet" href="css/profile.css">
+    <title>Profile</title>
+</div>
+<div layout:fragment="content">
+    <img src="image/logo-devflix.png" class="logo-devflix" alt="devflix">
+    <div class="button">
+        <a href="/logout">
+            <button type="submit" value="Se Déonnecter" id="se-deconnecter">logout</button>
+        </a>
+        <a href="/add-movie">
+            <button type="submit" value="Add-movie" id="add-movie">Add Movie</button>
+        </a>
+    </div>
+</div>
+</body>
+</html>

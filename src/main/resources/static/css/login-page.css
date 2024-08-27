@@ -40,7 +40,7 @@ html {
     height: 3vh;
     width: 6vw;
     margin-top: -1vh;
-    margin-left: 52.5vw;
+    margin-left: 41.5vw;
 }
 
 .icone-cloche {
@@ -50,11 +50,22 @@ html {
     margin-top: -1vh;
 }
 
+.icone-login {
+    width: 6vw;
+    margin-left: 5vw;
+    margin-top: -1vh;
+}
+
+.icone-logout {
+    width: 6vw;
+    margin-left: 5vw;
+    margin-top: -1vh;
+}
+
 /*-------------------- MAIN ---------------------*/
 .logo-devflix {
     width: 35vw;
     margin-left: 36vw;
-    margin-top: 6vh;
 }
 
 .h2-connecter {
@@ -101,7 +112,6 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .password {

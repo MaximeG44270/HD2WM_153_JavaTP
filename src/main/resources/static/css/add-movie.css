@@ -62,98 +62,114 @@ html {
     margin-top: -1vh;
 }
 
-/*-------------------- CONTAINER ---------------------*/
-
-.h1-text {
-    font-family: 'poppins', sans-serif;
-    color: #c6c6c6;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 1.5rem;
-    margin-left: 6vw;
-    margin-top: 2vh;
-    align-content: center;
+/*-------------------- MAIN ---------------------*/
+.logo-devflix {
+    width: 35vw;
 }
 
-.movie {
-    padding-left: 31px;
-    padding-right: 33px;
-}
-
-.eni-star-check {
-    color: yellow;
-}
-
-.body-text-carte {
+.main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -20vh;
-    margin-bottom: 18vh;
 }
 
-.image-border-radius {
-    border-radius: 7%;
-}
-
-.image-with-shadow {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.création-de-carte {
-    position: relative;
-    width: 100%;
-    margin-bottom: 6vh;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.image-carte {
-    position: relative;
-}
-
-.image-carte img {
-    width: 100%;
-    display: block;
-    border-radius: 10px;
-}
-
-.image-carte::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-    border-radius: 0 0 10px 10px;
-}
-
-.body-text-carte {
-    position: absolute;
-    bottom: -135px;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    z-index: 1;
-}
-
-.h3-carte {
+.ajouter-movie {
     font-family: 'poppins', sans-serif;
     color: #c6c6c6;
     font-weight: 500;
     font-style: italic;
-    font-size: 1.5rem;
-    margin-left: 6vw;
+    font-size: 2rem;
+    margin-top: 1.5vh;
+    align-content: center;
+}
+
+#movieForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6vh;
+}
+
+input {
+    width: 80vw;
+    height: 4vh;
     margin-top: 2vh;
-    margin-bottom: 0;
+    border: solid;
+    border-color: #f31434;
+    font-family: 'poppins', sans-serif;
+    color: #141414;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+label {
+    font-family: 'poppins', sans-serif;
+    color: #f31434;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-top: 2vh;
+}
+
+.container-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+.container-year {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+.container-duration {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+.container-synopsis {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+#envoyer {
+    margin-right: 5vw;
+    font-family: 'poppins', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #f31434;
+    color: #fff;
+    border-radius: 15px;
+    width: 40vw;
+    height: 4vh;
+    margin-top: 5vh;
+    margin-left: 5vw;
 }
 
 .rectangle {
     width: 100%;
-    height: 14vh;
+    height: 5vh;
+    margin-bottom: 15vh;
 }
 
 /*-------------------- FOOTER ---------------------*/
@@ -168,7 +184,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     margin-top: 3vh;
-    background-color: black;
+    background-color:black;
 }
 
 .footer-picture-home {

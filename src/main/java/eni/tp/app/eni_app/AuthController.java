@@ -1,8 +1,12 @@
 package eni.tp.app.eni_app;
 
 import eni.tp.app.eni_app.bo.Member;
+import eni.tp.app.eni_app.ihm.FlashMessage;
+import eni.tp.app.eni_app.ihm.ihmHelpers;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +26,7 @@ public class AuthController {
        Member loggedUser = (Member) model.getAttribute("loggedUser");
 
         if (loggedUser != null) {
-            return "auth/already-logged-page";
+            return "auth/profile";
         }
 
         // Instancier un User vide (email et password vide)
@@ -36,12 +40,19 @@ public class AuthController {
     }
 
     @PostMapping("login")
-    public String processLogin(@ModelAttribute Member user, Model model, RedirectAttributes redirectAttributes) {
+    public String processLogin(@Valid @ModelAttribute Member user, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
+        /*
+        if (bindingResult.hasErrors()) {
+        }*/
+
         //mettre l'user dans la session
         model.addAttribute("loggedUser", user);
 
         //Ajouter un message temporaire(flash message)
-        redirectAttributes.addFlashAttribute("flashMessage", "Vous êtes connecté");
+        redirectAttributes.addFlashAttribute("flashMessage",
+                new FlashMessage(FlashMessage.TYPE_FLASH_SUCCESS, "You have successfully logged in."));
+
+        ihmHelpers.sendCommonFlashMessage(redirectAttributes, FlashMessage.TYPE_FLASH_SUCCESS, "You have logged in successfully.");
 
         //rediriger sur la page d'accueil
         return "redirect:/Home";
@@ -51,9 +62,16 @@ public class AuthController {
     public String logout(SessionStatus sessionStatus, RedirectAttributes redirectAttributes) {
         sessionStatus.setComplete();
 
-        redirectAttributes.addFlashAttribute("flashMessage", "Vous êtes déconnecté");
+        redirectAttributes.addFlashAttribute("flashMessage", "You have successfully logged in.");
+
+        ihmHelpers.sendCommonFlashMessage(redirectAttributes, FlashMessage.TYPE_FLASH_SUCCESS, "You have logged in successfully.");
 
         //rediriger à la page d'acceuil
         return "redirect:/Home";
+    }
+
+    @GetMapping("Register")
+    public String Register() {
+        return "auth/register";
     }
 }

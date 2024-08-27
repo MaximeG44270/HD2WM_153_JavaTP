@@ -19,9 +19,9 @@
                         <div class="body-text-carte">
                             <h3 class="h3-carte" th:text="${movie.title}"></h3>
                             <div>
-                                <span th:text="${'Année : ' + movie.year}"></span>
+                                <span th:text="${'Year : ' + movie.year}"></span>
                             -
-                                <span th:text="${'Durée : ' + movie.duration}"></span>
+                                <span th:text="${'Duration : ' + movie.duration + ' min'}"></span>
                             </div>
                             <div>
                                 <i th:each="star: ${maxStars}" class="fa fa-star" th:classappend="${movie.getNote() >= star} ? 'eni-star-check' : ''"></i>
