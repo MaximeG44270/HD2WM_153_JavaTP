@@ -15,7 +15,7 @@ public class MovieManager {
     @Autowired
     IDAOMovie daoMovie;
     /**
-     * Le manager qui récupère la liste des Aliments
+     * Le manager qui récupère la liste des Movies
      * @return
      *
      */

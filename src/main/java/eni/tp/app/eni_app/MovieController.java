@@ -30,6 +30,12 @@ public class MovieController {
         //envoyer les films dans le modèle
         model.addAttribute("movies", movies);
 
+        // Envoyer le dernier film ajouté
+        if (!movies.isEmpty()) {
+            Movie lastMovie = movies.get(movies.size() - 1);
+            model.addAttribute("lastMovie", lastMovie);
+        }
+
         //Envoyer la note maximale
         List<Integer> maxStars = Arrays.asList(1, 2, 3, 4, 5);
         model.addAttribute("maxStars", maxStars);

@@ -11,7 +11,6 @@ public class Movie {
     public String synopsis;
     public String urlImage;
 
-
     public long getId() {
         return id;
     }
