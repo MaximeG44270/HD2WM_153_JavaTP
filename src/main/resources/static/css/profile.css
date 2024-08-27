@@ -13,6 +13,7 @@ html {
 .nom-devflix {
     display: flex;
     flex-direction: column;
+    margin-top: 3vh;
 }
 
 .nom-devflix-1 {
@@ -39,7 +40,7 @@ html {
     height: 3vh;
     width: 6vw;
     margin-top: -1vh;
-    margin-left: 41.5vw;
+    margin-left: 37.5vw;
 }
 
 .icone-cloche {
@@ -63,14 +64,62 @@ html {
 
 /*-------------------- MAIN ---------------------*/
 .logo-devflix {
-    width: 21vw;
+    width: 31vw;
     margin-left: 42vw;
     margin-top: 6vh;
+    margin-bottom: 8vh;
 }
+
+.h2-saved {
+    font-family: 'poppins', sans-serif;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1rem;
+    margin-left: 6vw;
+    margin-top: 1.5vh;
+    align-content: center;
+}
+
+/*------------------ CAROUSELS ------------------*/
+.carousel-1 {
+    height: 30vh;
+}
+.carousel-2 {
+    height: 30vh;
+}
+
+.carousel-3 {
+    height: 30vh;
+}
+.carousel-4 {
+    height: 30vh;
+}
+.carousel-5 {
+    height: 30vh;
+}
+.carousel-6 {
+    height: 30vh;
+}
+.carousel-7 {
+    height: 30vh;
+}
+.carousel-8 {
+    height: 30vh;
+}
+.carousel-9 {
+    height: 30vh;
+}
+.carousel-10 {
+    height: 30vh;
+}
+
+/*------------------ CAROUSELS ------------------*/
 
 .button {
     display: flex;
     justify-content: center;
+    margin-top: 3vh;
 }
 
 #se-deconnecter {
@@ -96,8 +145,8 @@ html {
     font-style: italic;
     font-size: 1.3rem;
     text-align: center;
-    background-color: #f31434;
-    color: #fff;
+    background-color: #c6c6c6;
+    color: #141414;
     border-radius: 15px;
     width: 40vw;
     height: 4vh;

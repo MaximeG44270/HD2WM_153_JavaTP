@@ -14,9 +14,13 @@ public class Movie {
     //temporaire => Plus tard les notes
     public int note = 4;
 
-    @Min(value = 1985)
+    @Min(value = 1985, message = "Veuillez saisir année cohérante")
     public int year;
+
+    @Min(value = 1, message = "Il faut au moins 1 min")
     public int duration;
+
+    @NotBlank(message = "Le synospsis est obligatoire")
     public String synopsis;
     public String urlImage;
 

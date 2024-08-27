@@ -22,6 +22,7 @@ public class MovieController {
     public String homePage() {
         return "index";
     }
+
     @GetMapping("ListOfMovies")
     public String listOfMovies(Model model) {
         //Récupérer la liste
@@ -51,6 +52,8 @@ public class MovieController {
         model.addAttribute("movie", movie);
         return "movie-detail";
     }
+
+
 
     @GetMapping("add-movie")
     public String addMovie(Model model) {
