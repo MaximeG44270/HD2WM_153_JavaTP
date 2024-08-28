@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Positive;
 
 public class Movie {
 
-    public long id;
+    public int id;
 
     @NotBlank(message = "merci de rensigner un titre !!!")
     public String title;
@@ -31,7 +31,7 @@ public class Movie {
     public long getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -63,7 +63,7 @@ public class Movie {
         this.synopsis = synopsis;
     }
 
-    public Movie(long id, String title, int year, int duration, String synopsis, String urlImage) {
+    public Movie(int id, String title, int year, int duration, String synopsis, String urlImage) {
         this.id = id;
         this.title = title;
         this.year = year;

@@ -2,12 +2,13 @@ package eni.tp.app.eni_app.DAO;
 
 //import eni.demo.demo.module4.Aliment;
 import eni.tp.app.eni_app.bo.Movie;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 
-//@Profile("Mock")
+@Profile("Mock")
 @Component
 public class DAOMovieMock implements IDAOMovie {
 
@@ -30,7 +31,7 @@ public class DAOMovieMock implements IDAOMovie {
     }
 
     @Override
-    public Movie selectMovieById(long id) {
+    public Movie selectMovieById(int id) {
         Movie movieToFound = movies.stream()
                 .filter(movie -> movie.id == id)
                 .findFirst()

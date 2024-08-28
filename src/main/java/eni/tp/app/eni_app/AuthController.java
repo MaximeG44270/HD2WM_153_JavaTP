@@ -33,20 +33,21 @@ public class AuthController {
         Member user = new Member();
 
         // Envoyer le user dans le Model
-        model.addAttribute("user", user);
+        model.addAttribute("member", user);
 
         // Afficher la page qui contient le formulaire
         return "auth/login-page";
     }
 
     @PostMapping("login")
-    public String processLogin(@Valid @ModelAttribute Member user, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
-        /*
+    public String processLogin(@Valid @ModelAttribute Member member, BindingResult bindingResult,Model model, RedirectAttributes redirectAttributes) {
+
         if (bindingResult.hasErrors()) {
-        }*/
+            return "auth/login-page";
+        }
 
         //mettre l'user dans la session
-        model.addAttribute("loggedUser", user);
+        model.addAttribute("loggedUser", member);
 
         //Ajouter un message temporaire(flash message)
         redirectAttributes.addFlashAttribute("flashMessage",

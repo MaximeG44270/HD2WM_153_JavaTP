@@ -9,27 +9,20 @@
 <div layout:fragment="content">
     <div class="container">
         <h1 class="h1-text">The Movies</h1>
-        <div class="movie">
-            <div th:each="movie : ${movies}">
-                <a th:href="@{'/movie-detail/' + ${movie.getId()}}">
-                    <div class="création-de-carte">
-                        <div class="image-carte">
-                            <img class="image-border-radius image-with-shadow" th:src="${movie.urlImage}" alt="">
-                        </div>
-                        <div class="body-text-carte">
-                            <h3 class="h3-carte" th:text="${movie.title}"></h3>
-                            <div>
-                                <span th:text="${'Year : ' + movie.year}"></span>
-                            -
-                                <span th:text="${'Duration : ' + movie.duration + ' min'}"></span>
-                            </div>
-                            <div>
-                                <i th:each="star: ${maxStars}" class="fa fa-star" th:classappend="${movie.getNote() >= star} ? 'eni-star-check' : ''"></i>
-                            </div>
-                        </div>
+        <div th:each="movie : ${movies}" class="uk-padding-small">
+            <a th:href="@{'/movie-detail/' + ${movie.id}}" class="eni-movie-card-click">
+            <div class="eni-movie-card"
+                 style="background-image: url('image/menace-fantome-picture.jpg');">
+                <div class="eni-movie-card-layer-2">
+                    <h1 th:text="${movie.title}"></h1><span th:text="${movie.duration} + ' min'"></span>
+                    <div>
+                        <i th:each="star: ${maxStars}" class="fa fa-star"
+                           th:classappend="${movie.getNote() >= star} ? 'eni-star-check' : ''"></i>
                     </div>
-                </a>
+                    <p th:text="${movie.synopsis}" class="eni-desc"></p>
+                </div>
             </div>
+            </a>
         </div>
     </div>
     <div class="rectangle"></div>

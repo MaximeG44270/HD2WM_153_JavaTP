@@ -2,21 +2,35 @@ package eni.tp.app.eni_app;
 
 import eni.tp.app.eni_app.bll.MovieManager;
 import eni.tp.app.eni_app.bo.Movie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.LocaleResolver;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 @SessionAttributes({"loggedUser"})
 @Controller
-public class MovieController {
+public class AppController {
     @Autowired
     MovieManager movieManager;
+
+    @Autowired
+    LocaleResolver localeResolver;
+
+    @GetMapping("change-lang/{lang}")
+    public String changeLang(@PathVariable("lang") String lang, HttpServletRequest request, HttpServletResponse response) {
+        Locale locale= Locale.forLanguageTag(lang);
+        localeResolver.setLocale(request, response, locale);
+        return "redirect:/Home";
+    }
 
     @GetMapping("Home")
     public String homePage() {
@@ -44,7 +58,7 @@ public class MovieController {
         return "list-of-movies";
     }
     @GetMapping("movie-detail/{id}")
-    public String detailPage(@PathVariable("id")long id, Model model) {
+    public String detailPage(@PathVariable("id")int id, Model model) {
         Movie movie = movieManager.getById(id);
         if(movie == null){
             return "movie-not-found";

@@ -148,6 +148,10 @@ input:valid {
     border: 2px dashed rgb(243, 20, 52);
 }
 
+.button {
+    margin-bottom: 13vh;
+}
+
 /*-------------------- FOOTER ---------------------*/
 footer {
     position: fixed;

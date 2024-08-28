@@ -26,7 +26,7 @@ public class MovieManager {
 
     }
     public Movie getById(long id) {
-        Movie movie = daoMovie.selectMovieById(id);
+        Movie movie = daoMovie.selectMovieById((int) id);
         return movie;
     }
 }
