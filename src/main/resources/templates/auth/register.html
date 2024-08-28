@@ -11,31 +11,31 @@
   <form id="inscrireForm">
     <div class="name">
       <div class="container-label">
-        <label for="nom">USER NAME</label>
+        <label th:text="#{text.user.name}" for="nom">USER NAME</label>
       </div>
-      <input type="text" placeholder="3 caractères minimum" id="nom" name="nom" class="input" required />
+      <input type="text" placeholder="3 caractères minimum" id="nom" name="nom" class="input"/>
     </div>
     <div class="email">
       <div class="container-label">
-        <label for="email">ENTER YOUR EMAIL</label>
+        <label th:text="#{text.enter.mail}" for="email">ENTER YOUR EMAIL</label>
       </div>
-      <input type="text" placeholder="Votre email" id="email" name="email" class="input" required />
+      <input type="text" placeholder="Votre email" id="email" name="email" class="input"/>
     </div>
     <div class="password">
       <div class="container-label">
-        <label for="password">PASSWORD</label>
+        <label th:text="#{text.password}" for="password">PASSWORD</label>
       </div>
-      <input type="text" placeholder="Votre mot de passe" id="password" name="password" class="input" required />
+      <input type="text" placeholder="Votre mot de passe" id="password" name="password" class="input"/>
     </div>
     <div class="confirm-password">
       <div class="container-label"></div>
-      <label for="confirm-password">CONFIRM PASSWORD</label>
+      <label th:text="#{text.conf.password}" for="confirm-password">CONFIRM PASSWORD</label>
     </div>
     <input type="text" id="confirm-password" placeholder="Confirmer votre mot de passe" name="confirmPassword"
          class="input" required />
     <div class="button">
-      <button type="submit" id="creaCompte">Account creation</button>
-      <button type="reset" id="annuler">Cancel</button>
+      <button th:text="#{text.crea.account}" type="submit" id="creaCompte">Account creation</button>
+      <button th:text="#{text.cancel}" type="reset" id="annuler">Cancel</button>
     </div>
   </form>
 </div>

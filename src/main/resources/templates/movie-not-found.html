@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/movie-list.css">
 </div>
 <div layout:fragment="content">
-    <h1>Erreur</h1>
-    <p>Le Film que vous essayer d'afficher n'existe pas</p>
+    <h1 th:text="#{text.error}">Error</h1>
+    <p th:text="#{text.not.found}">The movie you are trying to display does not exist.</p>
 </div>
 </body>
 </html>
