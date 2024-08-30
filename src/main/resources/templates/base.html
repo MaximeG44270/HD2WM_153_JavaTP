@@ -4,18 +4,18 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="/width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css"/>
+    <link rel="preconnect" href="/https://fonts.googleapis.com">
+    <link rel="preconnect" href="/https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Water+Brush&display=swap" rel="stylesheet">
     <!-- UIkit CSS -->
-    <link rel="stylesheet" href="vendor/uikit/css/uikit.min.css" />
-    <!-- UIkit JS -->
-    <script src="vendor/uikit/js/uikit.min.js"></script>
-    <script src="vendor/uikit/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="/vendor/uikit/css/uikit.min.css" />
     <!------------------------------------------------------------- DEBUT DE HEADER ------------------------------------------------------------->
     <div layout:fragment="css-title"></div>
+    <!-- UIkit JS -->
+    <script src="/vendor/uikit/js/uikit.min.js"></script>
+    <script src="/vendor/uikit/js/uikit-icons.min.js"></script>
     <!------------------------------------------------------------- FIN DE HEADER ------------------------------------------------------------->
 </head>
 <body>
@@ -25,14 +25,14 @@
             <p th:text="#{low.title}" class="nom-devflix-1">Welcome to</p>
             <p th:text="#{title.home}" class="nom-devflix-2">DEVFLIX</p>
         </div>
-        <img src="image/loupe-picture.png" class="icone-loupe" alt="logo-loupe">
-        <img src="image/cloche-picture.png" class="icone-cloche" alt="logo-cloche">
+        <img src="/image/loupe-picture.png" class="icone-loupe" alt="logo-loupe">
+        <img src="/image/cloche-picture.png" class="icone-cloche" alt="logo-cloche">
         <div class="bouton-login-logout">
             <a href="/login">
-                <img th:if="${loggedUser == null}" src="image/login.png" class="icone-login" alt="connection">
+                <img th:if="${loggedUser == null}" src="/image/login.png" class="icone-login" alt="connection">
             </a>
             <a href="/logout">
-                <img th:if="${loggedUser != null}" src="image/logout.png" class="icone-logout" alt="déconnection">
+                <img th:if="${loggedUser != null}" src="/image/logout.png" class="icone-logout" alt="déconnection">
             </a>
         </div>
        </div>
@@ -54,34 +54,34 @@
         <div class="footer">
             <div class="picture-home">
                 <div class="picture-home-fond">
-                    <a href="Home">
-                        <img class="footer-picture-home" src="image/picture-home.png" alt="home">
+                    <a href="/Home">
+                        <img class="footer-picture-home" src="/image/picture-home.png" alt="home">
                     </a>
                     <p th:text="#{legend.home}" class="footer-text-home">Home</p>
                 </div>
             </div>
             <div class="picture-discover">
                 <div class="picture-discover-fond">
-                    <a href="Home">
-                        <img class="footer-picture-discover" src="image/picture-discover.png" alt="discover">
+                    <a href="/ListOfMovies">
+                        <img class="footer-picture-discover" src="/image/list-picture.png" alt="discover">
                     </a>
-                    <p th:text="#{legend.Discover} class="footer-text-discover">Discover</p>
+                    <p th:text="#{legend.Discover}" class="footer-text-discover">List Movie</p>
                 </div>
             </div>
             <div class="picture-saved">
                 <div class="picture-saved-fond">
-                    <a href="Home">
-                        <img class="footer-picture-saved" src="image/picture-saved.png" alt="saved">
+                    <a href="/Home">
+                        <img class="footer-picture-saved" src="/image/picture-saved.png" alt="saved">
                     </a>
-                    <p th:text="#{legend.Saved} class="footer-text-saved">Saved</p>
+                    <p th:text="#{legend.Saved}" class="footer-text-saved">Saved</p>
                 </div>
             </div>
             <div class="picture-profile">
                 <div class="picture-profile-fond">
-                    <a href="login">
-                        <img class="footer-picture-profile" src="image/picture-profile.png" alt="profile">
+                    <a href="/login">
+                        <img class="footer-picture-profile" src="/image/picture-profile.png" alt="profile">
                     </a>
-                    <p th:text="#{legend.Profile} class="footer-text-profile">Profile</p>
+                    <p th:text="#{legend.Profile}" class="footer-text-profile">Profile</p>
                 </div>
             </div>
         </div>

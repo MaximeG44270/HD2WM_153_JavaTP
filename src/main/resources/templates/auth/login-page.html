@@ -12,9 +12,9 @@
         <h2 th:text="#{text.login}"class="h2-connecter">Login</h2>
         <div class="name">
             <div class="container-label">
-                <label th:text="#{text.user.name}" for="nom">USER NAME</label>
+                <label th:text="#{text.email}" for="nom">EMAIL</label>
             </div>
-            <input th:field="*{email}" type="text" placeholder="Email valid" id="email" name="email" class="input"/>
+            <input type="text" th:placeholder="#{text.email.valid}" id="email" name="email" class="input"/>
             <ul th:if="${#fields.hasErrors('email')}">
                 <li th:each="error: ${#fields.errors('email')}" th:text="${error}"></li>
             </ul>
@@ -23,7 +23,7 @@
             <div class="container-label">
                 <label th:text="#{text.password}" for="password">PASSWORD</label>
             </div>
-            <input th:field="*{password}" type="text" placeholder="Your password" id="password" name="password" class="input"/>
+            <input type="text" th:placeholder="#{text.your.password}" id="password" name="password" class="input"/>
             <ul th:if="${#fields.hasErrors('password')}">
                 <li th:each="error: ${#fields.errors('password')}" th:text="${error}"></li>
             </ul>

@@ -8,21 +8,14 @@
 </div>
 <div layout:fragment="content">
     <div class="container">
-        <h1 class="h1-text">The Movies</h1>
-        <div th:each="movie : ${movies}" class="uk-padding-small">
-            <a th:href="@{'/movie-detail/' + ${movie.id}}" class="eni-movie-card-click">
-            <div class="eni-movie-card"
-                 style="background-image: url('image/menace-fantome-picture.jpg');">
-                <div class="eni-movie-card-layer-2">
-                    <h1 th:text="${movie.title}"></h1><span th:text="${movie.duration} + ' min'"></span>
-                    <div>
-                        <i th:each="star: ${maxStars}" class="fa fa-star"
-                           th:classappend="${movie.getNote() >= star} ? 'eni-star-check' : ''"></i>
+        <h1 th:text="#{texte.the.movie}" class="h1-text">The Movies</h1>
+        <div class="movie-container">
+            <div th:each="movie : ${movies}" class="uk-padding-small container-card">
+                <a th:href="@{'/movie-detail/' + ${movie.id}}" class="eni-movie-card-click">
+                    <div class="picture-card" th:style="'background-image: url(' + @{${movie.urlImage}} + ');'">
                     </div>
-                    <p th:text="${movie.synopsis}" class="eni-desc"></p>
-                </div>
+                </a>
             </div>
-            </a>
         </div>
     </div>
     <div class="rectangle"></div>

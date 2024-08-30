@@ -1,4 +1,4 @@
-package eni.tp.app.eni_app.DAO;
+package eni.tp.app.eni_app.dao;
 
 import eni.tp.app.eni_app.bo.Movie;
 
@@ -10,4 +10,5 @@ public interface IDAOMovie {
 
     Movie selectMovieById(int id);
 
+    void save(Movie movie);
 }

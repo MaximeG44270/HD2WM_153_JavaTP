@@ -51,10 +51,6 @@ public class AppController {
             model.addAttribute("lastMovie", lastMovie);
         }
 
-        //Envoyer la note maximale
-        List<Integer> maxStars = Arrays.asList(1, 2, 3, 4, 5);
-        model.addAttribute("maxStars", maxStars);
-
         return "list-of-movies";
     }
     @GetMapping("movie-detail/{id}")
@@ -64,15 +60,26 @@ public class AppController {
             return "movie-not-found";
         }
         model.addAttribute("movie", movie);
+
+        List<Integer> maxStars = Arrays.asList(1, 2, 3, 4, 5);
+        model.addAttribute("maxStars", maxStars);
+
         return "movie-detail";
     }
 
 
 
-    @GetMapping("add-movie")
-    public String addMovie(Model model) {
+    @GetMapping({"add-movie/{id}","add-movie"})
+    public String addMovie(@PathVariable(required = false) Integer id, Model model) {
         // Instancier un film par défaut
         Movie movie = new Movie();
+
+        // Si y'a un id, le film on le récupère grace à l'id
+        // PS: On écrase le film vide qu'on voulait afficher dans le form
+        // Donc on affichera un film existant dans le formulaire
+        if (id != null) {
+            movie = movieManager.getById(id);
+        }
 
         // Envoyer le film dans le model
         model.addAttribute("movie", movie);
@@ -86,6 +93,7 @@ public class AppController {
         /*
         if (bindingResult.hasErrors()) {
         }*/
+        movieManager.save(movie);
 
         return "add-movie";
     }

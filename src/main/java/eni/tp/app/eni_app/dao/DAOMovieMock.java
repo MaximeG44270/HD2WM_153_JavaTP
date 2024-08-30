@@ -1,4 +1,4 @@
-package eni.tp.app.eni_app.DAO;
+package eni.tp.app.eni_app.dao;
 
 //import eni.demo.demo.module4.Aliment;
 import eni.tp.app.eni_app.bo.Movie;
@@ -37,5 +37,10 @@ public class DAOMovieMock implements IDAOMovie {
                 .findFirst()
                 .orElse(null);
         return movieToFound;
+    }
+
+    @Override
+    public void save(Movie movie) {
+
     }
 }

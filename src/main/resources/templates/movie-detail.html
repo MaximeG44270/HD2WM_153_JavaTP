@@ -4,10 +4,24 @@
 <body>
 <div layout:fragment="css-title">
     <title>DEVFLIX-MOVIE-DETAIL</title>
-    <link rel="stylesheet" href="css/movie-detail.css">
+    <link rel="stylesheet" href="/css/movie-detail.css">
 </div>
 <div layout:fragment="content">
-
+    <div class="background-wrapper">
+        <img th:src="@{${movie.urlImage}}" class="background-image" alt="Background Image"/>
+        <div class="content">
+            <p th:text="${movie.title}" class="text-title-movie"></p>
+            <img th:src="@{${movie.urlImage}}" class="picture-size" alt="Movie Image"/>
+            <p th:text="${movie.year} + ' - ' + ${movie.duration} + ' minutes'" class="text-year-duration"></p>
+            <div>
+                <i th:each="star: ${maxStars}" class="fa fa-star" th:classappend="${movie.getNote() >= star} ?'star-yello':''"></i>
+            </div>
+            <div class="back-synopsis">
+                <p th:text="${movie.synopsis}" class="text-synopsis"></p>
+            </div>
+        </div>
+    </div>
+    <div class="rectangle"></div>
 </div>
 </body>
 </html>

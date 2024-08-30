@@ -2,7 +2,6 @@ package eni.tp.app.eni_app.bo;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
 
 public class Movie {
 
@@ -11,8 +10,7 @@ public class Movie {
     @NotBlank(message = "merci de rensigner un titre !!!")
     public String title;
 
-    //temporaire => Plus tard les notes
-    public int note = 4;
+    public int note ;
 
     @Min(value = 1985, message = "Veuillez saisir année cohérante")
     public int year;
@@ -28,7 +26,7 @@ public class Movie {
 
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
     public void setId(int id) {

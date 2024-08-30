@@ -1,4 +1,4 @@
-package eni.tp.app.eni_app.DAO;
+package eni.tp.app.eni_app.dao;
 
 
 import eni.tp.app.eni_app.bo.Movie;
@@ -30,6 +30,7 @@ public class DAOMovieMySQL implements IDAOMovie {
             movie.year = rs.getInt("year");
             movie.duration = rs.getInt("duration");
             movie.synopsis = rs.getString("synopsis");
+            movie.urlImage = rs.getString("urlImage");
 
             return movie;
         }
@@ -50,5 +51,16 @@ public class DAOMovieMySQL implements IDAOMovie {
             return null;
         }
         return movies.get(0);
+    }
+
+    @Override
+    public void save(Movie movie) {
+        if (movie.getId()!= 0 && selectMovieById(movie.getId()) != null) {
+            jdbcTemplate.update("UPDATE movie SET title = ?, year = ?, duration = ?, synopsis = ? WHERE id = ?",
+                    movie.title, movie.year, movie.duration, movie.synopsis, movie.id);
+            return;
+        }
+        jdbcTemplate.update("INSERT INTO movie (title, note, year, duration, synopsis) VALUES (?, ?, ?, ?, ?)",
+                movie.title, 3, movie.year, movie.duration, movie.synopsis);
     }
 }

@@ -3,13 +3,14 @@
       layout:decorate="~{/base}">
 <body>
 <div layout:fragment="css-title">
-  <link rel="stylesheet" href="css/add-movie.css">
+  <link rel="stylesheet" href="/css/add-movie.css">
   <title>Add Movie</title>
 </div>
 <div layout:fragment="content">
   <div class="main">
-    <img src="image/logo-devflix.png" class="logo-devflix" alt="devflix">
+    <img src="/image/logo-devflix.png" class="logo-devflix" alt="devflix">
     <form th:object="${movie}" method="post" action="/add-movie" id="movieForm">
+      <input th:field="*{id}" type="hidden">
       <h2 class="ajouter-movie">Add Your Movie</h2>
       <div class="container-title">
         <div class="container-label">

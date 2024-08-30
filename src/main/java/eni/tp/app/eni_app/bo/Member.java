@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Size;
 
 public class Member {
 
+    // @Pattern() pour faire les regex
     @Email(message = "Veuillez rentrer une adresse mail valide !!")
     @NotBlank( message = "L'adresse mail doit être renseigné")
     public String email;
@@ -14,9 +15,13 @@ public class Member {
     @Size(min=2, max=250, message = "Doit avoir au moins 2 caractères")
     public String password;
 
+    public Member(String email, String password) {
+        this.email = "";
+        this.password = "";
+    }
+
     public Member() {
-        email = "";
-        password = "";
+
     }
 
     public String getEmail() {

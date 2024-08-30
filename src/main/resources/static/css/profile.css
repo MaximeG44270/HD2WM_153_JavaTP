@@ -63,9 +63,14 @@ html {
 }
 
 /*-------------------- MAIN ---------------------*/
+.placement-picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo-devflix {
-    width: 38vw;
-    margin-left: 32vw;
+    width: 31vw;
 }
 
 .h2-saved {
@@ -80,36 +85,50 @@ html {
 }
 
 /*------------------ CAROUSELS ------------------*/
+.margin-carousel {
+    margin-left: 4vw;
+}
+
 .carousel-1 {
     height: 30vh;
+    width: 40vw;
 }
 .carousel-2 {
     height: 30vh;
+    width: 40vw;
 }
 
 .carousel-3 {
     height: 30vh;
+    width: 40vw;
 }
 .carousel-4 {
     height: 30vh;
+    width: 40vw;
 }
 .carousel-5 {
     height: 30vh;
+    width: 40vw;
 }
 .carousel-6 {
     height: 30vh;
+    width: 40vw;
 }
 .carousel-7 {
     height: 30vh;
+    width: 40vw;
 }
 .carousel-8 {
     height: 30vh;
+    width: 40vw;
 }
 .carousel-9 {
     height: 30vh;
+    width: 40vw;
 }
 .carousel-10 {
     height: 30vh;
+    width: 40vw;
 }
 
 /*------------------ CAROUSELS ------------------*/
