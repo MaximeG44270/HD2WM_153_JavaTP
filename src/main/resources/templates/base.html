@@ -28,23 +28,23 @@
         <img src="/image/loupe-picture.png" class="icone-loupe" alt="logo-loupe">
         <img src="/image/cloche-picture.png" class="icone-cloche" alt="logo-cloche">
         <div class="bouton-login-logout">
-            <a href="/login">
-                <img th:if="${loggedUser == null}" src="/image/login.png" class="icone-login" alt="connection">
+            <a sec:authorize="!isAuthenticated()" href="/login">
+                <img src="/image/login.png" class="icone-login" alt="connection">
             </a>
-            <a href="/logout">
-                <img th:if="${loggedUser != null}" src="/image/logout.png" class="icone-logout" alt="déconnection">
+            <a sec:authorize="isAuthenticated()" href="/logout">
+                <img src="/image/logout.png" class="icone-logout" alt="déconnection">
             </a>
         </div>
        </div>
 
-    <!-- Flash message conditionnel -->
-    <!-- Affiche un message temporaire si il existe -->
-    <div th:if="${flashMessage}" class="uk-padding-small">
-        <div th:classappend="${flashMessage.getTypeCssClass}" class="uk-alert-primary" uk-alert>
-            <a href class="uk-alert-close" uk-close></a>
-            <p th:text="${flashMessage.message}"></p>
-        </div>
-    </div>
+<!--    &lt;!&ndash; Flash message conditionnel &ndash;&gt;-->
+<!--    &lt;!&ndash; Affiche un message temporaire si il existe &ndash;&gt;-->
+<!--    <div th:if="${flashMessage}" class="uk-padding-small">-->
+<!--        <div th:classappend="${flashMessage.getTypeCssClass}" class="uk-alert-primary" uk-alert>-->
+<!--            <a href class="uk-alert-close" uk-close></a>-->
+<!--            <p th:text="${flashMessage.message}"></p>-->
+<!--        </div>-->
+<!--    </div>-->
 
 <!------------------------------------------------------------- FIN DE HEADER ------------------------------------------------------------->
     <div layout:fragment="content">
@@ -76,9 +76,9 @@
                     <p th:text="#{legend.Saved}" class="footer-text-saved">Saved</p>
                 </div>
             </div>
-            <div class="picture-profile">
-                <div class="picture-profile-fond">
-                    <a href="/login">
+            <div sec:authorize="isAuthenticated()" class="picture-profile">
+            <div class="picture-profile-fond">
+                    <a href="/profile">
                         <img class="footer-picture-profile" src="/image/picture-profile.png" alt="profile">
                     </a>
                     <p th:text="#{legend.Profile}" class="footer-text-profile">Profile</p>

@@ -4,6 +4,7 @@ html {
     margin: 0;
 }
 
+a:hover{ cursor: default }
 /*-------------------- BARRE HAUTE---------------------*/
 .barre-haute {
     display: flex;
@@ -228,11 +229,11 @@ footer {
 }
 
 .picture-saved {
-    margin-right: 14vw;
     margin-top: 0.5vh;
 }
 
 .picture-profile {
+    margin-left: 14vw;
     margin-top: 1.5vh;
 }
 

@@ -4,6 +4,7 @@ html {
     margin: 0;
 }
 
+a:hover{ cursor: default }
 /*-------------------- BARRE HAUTE---------------------*/
 .barre-haute {
     display: flex;

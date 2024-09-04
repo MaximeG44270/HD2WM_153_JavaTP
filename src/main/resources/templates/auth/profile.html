@@ -75,7 +75,7 @@
             <button th:text="#{text.logout}" type="submit" value="Se Déonnecter" id="se-deconnecter">logout</button>
         </a>
         <a href="/add-movie">
-            <button th:text="#{text.add.movie}" type="submit" value="Add-movie" id="add-movie">Add Movie</button>
+            <button sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{text.add.movie}" type="submit" value="Add-movie" id="add-movie">Add Movie</button>
         </a>
     </div>
 </div>

@@ -8,25 +8,25 @@
 </div>
 <div layout:fragment="content">
     <img src="image/logo-devflix.png" class="logo-devflix" alt="devflix">
-    <form th:object="${member}" method="post" action="/login" id="inscrireForm">
+    <form method="post" th:action="@{/login}" id="inscrireForm">
         <h2 th:text="#{text.login}"class="h2-connecter">Login</h2>
         <div class="name">
             <div class="container-label">
-                <label th:text="#{text.email}" for="nom">EMAIL</label>
+                <label th:text="#{text.email}" for="email">EMAIL</label>
             </div>
-            <input type="text" th:placeholder="#{text.email.valid}" id="email" name="email" class="input"/>
-            <ul th:if="${#fields.hasErrors('email')}">
-                <li th:each="error: ${#fields.errors('email')}" th:text="${error}"></li>
-            </ul>
+            <input type="text" th:placeholder="#{text.email.valid}" id="email" name="username" class="input"/>
+<!--            <ul th:if="${#fields.hasErrors('email')}">-->
+<!--                <li th:each="error: ${#fields.errors('email')}" th:text="${error}"></li>-->
+<!--            </ul>-->
         </div>
         <div class="password">
             <div class="container-label">
                 <label th:text="#{text.password}" for="password">PASSWORD</label>
             </div>
             <input type="text" th:placeholder="#{text.your.password}" id="password" name="password" class="input"/>
-            <ul th:if="${#fields.hasErrors('password')}">
-                <li th:each="error: ${#fields.errors('password')}" th:text="${error}"></li>
-            </ul>
+<!--            <ul th:if="${#fields.hasErrors('password')}">-->
+<!--                <li th:each="error: ${#fields.errors('password')}" th:text="${error}"></li>-->
+<!--            </ul>-->
         </div>
         <div class="button">
             <button th:text="#{text.login}" type="submit" value="Se Connecter" id="se-connecter">Login</button>
