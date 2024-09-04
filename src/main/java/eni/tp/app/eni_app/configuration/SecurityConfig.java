@@ -109,6 +109,7 @@ public class SecurityConfig {
                         .requestMatchers("/ListOfMovies").permitAll()
                         .requestMatchers("/movie-detail/**").permitAll()
                         .requestMatchers("/login").permitAll()
+                        .requestMatchers("/register").permitAll()
                         .requestMatchers("/add-movie").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/add-movie/**").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/profile").authenticated()

@@ -101,7 +101,7 @@ public class AuthController {
         return "redirect:/Home";
     }
 
-    @GetMapping("Register")
+    @GetMapping("/register")
     public String Register() {
         return "auth/register";
     }

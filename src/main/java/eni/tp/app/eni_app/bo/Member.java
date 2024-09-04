@@ -15,9 +15,16 @@ public class Member {
     @Size(min=2, max=250, message = "Doit avoir au moins 2 caractères")
     public String password;
 
+    public int id;
+    public String prenom;
+    public String nom;
+
     public Member(String email, String password) {
         this.email = "";
         this.password = "";
+        this.id = id;
+        this.prenom = "";
+        this.nom = "";
     }
 
     public Member() {
@@ -38,5 +45,26 @@ public class Member {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 }

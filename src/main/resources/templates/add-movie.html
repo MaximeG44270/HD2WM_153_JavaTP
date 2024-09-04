@@ -9,7 +9,7 @@
 <div layout:fragment="content">
   <div class="main">
     <img src="/image/logo-devflix.png" class="logo-devflix" alt="devflix">
-    <form th:object="${movie}" method="post" action="/add-movie" id="movieForm">
+    <form th:object="${movie}" method="post" th:action="@{/add-movie}" id="movieForm">
       <input th:field="*{id}" type="hidden">
       <h2 class="ajouter-movie">Add Your Movie</h2>
       <div class="container-title">
