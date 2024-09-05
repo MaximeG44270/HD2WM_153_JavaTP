@@ -42,6 +42,19 @@
         </ul>
       </div>
     <!------------------------------------------------------------------------------------------------------------------------------------->
+      <div class="container-duration">
+        <div class="container-label">
+          <label for="category">Category of MOVIE</label>
+        </div>
+        <select th:field="*{category}" >
+          <option value="">Choisisser une categorie</option>
+          <option th:each="cat : ${categories}" th:value="${cat.id}" th:text="${cat.name}"></option>
+        </select>
+<!--        <ul th:if="${#fields.hasErrors('duration')}">-->
+<!--          <li th:each="error: ${#fields.errors('duration')}" th:text="${error}"></li>-->
+<!--        </ul>-->
+      </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------->
       <div class="container-synopsis">
         <div class="container-label">
           <label for="synopsis">Synopsis</label>

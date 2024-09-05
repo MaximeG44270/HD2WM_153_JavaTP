@@ -56,11 +56,11 @@ public class DAOMovieMySQL implements IDAOMovie {
     @Override
     public void save(Movie movie) {
         if (movie.getId()!= 0 && selectMovieById(movie.getId()) != null) {
-            jdbcTemplate.update("UPDATE movie SET title = ?, year = ?, duration = ?, synopsis = ? WHERE id = ?",
-                    movie.title, movie.year, movie.duration, movie.synopsis, movie.id);
+            jdbcTemplate.update("UPDATE movie SET title = ?, year = ?, duration = ?, synopsis = ?, id_category = ? WHERE id = ?",
+                    movie.title, movie.year, movie.duration, movie.synopsis, movie.getCategory().getId(), movie.id);
             return;
         }
-        jdbcTemplate.update("INSERT INTO movie (title, note, year, duration, synopsis) VALUES (?, ?, ?, ?, ?)",
-                movie.title, 3, movie.year, movie.duration, movie.synopsis);
+        jdbcTemplate.update("INSERT INTO movie (title, note, year, duration, synopsis, id_category) VALUES (?, ?, ?, ?, ?, ?)",
+                movie.title, 3, movie.year, movie.duration, movie.synopsis, movie.getCategory().getId());
     }
 }

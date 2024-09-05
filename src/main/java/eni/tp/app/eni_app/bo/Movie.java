@@ -6,21 +6,27 @@ import jakarta.validation.constraints.NotBlank;
 public class Movie {
 
     public int id;
-
     @NotBlank(message = "merci de rensigner un titre !!!")
     public String title;
-
     public int note ;
-
     @Min(value = 1985, message = "Veuillez saisir année cohérante")
     public int year;
-
     @Min(value = 1, message = "Il faut au moins 1 min")
     public int duration;
-
     @NotBlank(message = "Le synospsis est obligatoire")
     public String synopsis;
     public String urlImage;
+    private Category category;
+
+    public Movie(int id, String title, int year, int duration, String synopsis, String urlImage) {
+        this.id = id;
+        this.title = title;
+        this.year = year;
+        this.duration = duration;
+        this.synopsis = synopsis;
+        this.urlImage = urlImage;
+        this.category = category;
+    }
 
     public Movie() {
 
@@ -61,13 +67,12 @@ public class Movie {
         this.synopsis = synopsis;
     }
 
-    public Movie(int id, String title, int year, int duration, String synopsis, String urlImage) {
-        this.id = id;
-        this.title = title;
-        this.year = year;
-        this.duration = duration;
-        this.synopsis = synopsis;
-        this.urlImage = urlImage;
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public int getNote() {

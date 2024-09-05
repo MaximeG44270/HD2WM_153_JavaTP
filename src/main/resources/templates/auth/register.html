@@ -9,41 +9,28 @@
 <div layout:fragment="content">
   <img src="image/logo-devflix.png" class="logo-devflix" alt="devflix">
   <form th:object="${membre}" method="post" th:action="@{/register}" id="inscrireForm">
-    <input th:field="*{id}" type="hidden">
     <div class="first-name">
       <div class="container-label">
         <label th:text="#{text.first.name}" for="first-name">FIRST NAME</label>
       </div>
-      <input th:field="*{prenom}" type="text" placeholder="first name" id="first-name" name="nom" class="input"/>
-      <ul th:if="${#fields.hasErrors('prenom')}">
-        <li th:each="error: ${#fields.errors('prenom')}" th:text="${error}"></li>
-      </ul>
+      <input type="text" placeholder="first name" id="first-name" name="nom" class="input"/>
     </div>
     <div class="last-name">
       <div class="container-label"></div>
       <label th:text="#{text.last.name}" for="last-name">LAST NAME</label>
       <input th:field="*{nom}" type="text" id="last-name" placeholder="last-name" name="last-name" class="input"/>
-      <ul th:if="${#fields.hasErrors('nom')}">
-        <li th:each="error: ${#fields.errors('nom')}" th:text="${error}"></li>
-      </ul>
     </div>
     <div class="email">
       <div class="container-label">
         <label th:text="#{text.enter.mail}" for="email">ENTER YOUR EMAIL</label>
       </div>
-      <input th:field="*{email}" type="text" placeholder="Votre email" id="email" name="email" class="input"/>
-      <ul th:if="${#fields.hasErrors('email')}">
-        <li th:each="error: ${#fields.errors('email')}" th:text="${error}"></li>
-      </ul>
+      <input type="text" placeholder="Votre email" id="email" name="email" class="input"/>
     </div>
     <div class="password">
       <div class="container-label">
         <label th:text="#{text.password}" for="password">PASSWORD</label>
       </div>
-      <input th:field="*{password}" type="text" placeholder="Votre mot de passe" id="password" name="password" class="input"/>
-      <ul th:if="${#fields.hasErrors('password')}">
-        <li th:each="error: ${#fields.errors('passeword')}" th:text="${error}"></li>
-      </ul>
+      <input type="text" placeholder="Votre mot de passe" id="password" name="password" class="input"/>
     </div>
     <div class="button">
       <button th:text="#{text.crea.account}" type="submit" value="Envoyer" id="creaCompte">Account creation</button>

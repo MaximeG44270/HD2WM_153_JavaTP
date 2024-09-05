@@ -1,6 +1,8 @@
 package eni.tp.app.eni_app;
 
+import eni.tp.app.eni_app.bll.ICategoryManager;
 import eni.tp.app.eni_app.bll.MovieManager;
+import eni.tp.app.eni_app.bo.Category;
 import eni.tp.app.eni_app.bo.Movie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -21,6 +23,9 @@ import java.util.Locale;
 public class AppController {
     @Autowired
     MovieManager movieManager;
+
+    @Autowired
+    ICategoryManager categoryManager;
 
     @Autowired
     LocaleResolver localeResolver;
@@ -80,6 +85,9 @@ public class AppController {
         if (id != null) {
             movie = movieManager.getById(id);
         }
+
+        List<Category> categories = categoryManager.getCategories();
+        model.addAttribute("categories", categories);
 
         // Envoyer le film dans le model
         model.addAttribute("movie", movie);
